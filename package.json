@@ -1,0 +1,23 @@
+{
+  "name": "pwdemos",
+  "version": "1.0.0",
+  "description": "my playwright automation test scripts",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adityajadhav26/PwDemos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/adityajadhav26/PwDemos/issues"
+  },
+  "homepage": "https://github.com/adityajadhav26/PwDemos#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^24.5.2"
+  }
+}
