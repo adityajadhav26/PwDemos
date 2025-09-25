@@ -35,6 +35,12 @@ test("Verify PW locator", async({page})=>{
    await expect(page.getByRole('heading',{name:"Register"})).toHaveText("Register");
     
 
+   // 4. page.getByLabel() - Locate form control by label's text
+  // When to use: Ideal for form fields with visible labels.
+   await page.getByLabel("First name:").fill("Aditya");
+   await page.getByLabel("Email:").fill("abc@xyz.com");
+
+
 });
 
 
