@@ -40,6 +40,24 @@ test("Verify PW locator", async({page})=>{
    await page.getByLabel("First name:").fill("Aditya");
    await page.getByLabel("Email:").fill("abc@xyz.com");
 
+   // 5. page.getByPlaceholder() - Finds element with a given placeholder text.
+  // Best for inputs without a label but having a placeholder
+    await page.getByPlaceholder("Search store").fill("macbbok");
+
+    //// 6. page.getByTitle() to locate an element by its title attribute.
+  // When to use: When your element has a meaningful title attribute.
+    // we are adding .html file for demo next 2 functions.
+    await page.goto('http://127.0.0.1:5500/tests/locators.html');
+
+    await expect(page.getByTitle('Home page link')).toHaveText("Home");
+
+    
+// 7. page.getByTestId() : Locate an element based on its data-testid attribute (other attributes can be configured)
+  // When to use: When text or role-based locators are unstable or not suitable.
+
+ await expect( page.getByTestId("profile-name")).toHaveText("John Doe");
+
+  await expect(page.getByTestId('profile-email')).toHaveText("john.doe@example.com");
 
 });
 
