@@ -58,7 +58,8 @@ test("Verify PW locator", async({page})=>{
  await expect( page.getByTestId("profile-name")).toHaveText("John Doe");
 
   await expect(page.getByTestId('profile-email')).toHaveText("john.doe@example.com");
-
+    // in betBYTestId() only, we can configure testId attribute name in playwright.config.ts
+    //so after configuring,changing .html file, it will work.
 });
 
 
