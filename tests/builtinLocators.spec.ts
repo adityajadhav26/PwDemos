@@ -5,7 +5,7 @@ import{test,expect, Locator} from "@playwright/test"
 //1. page.getByAltText()
 // locate by 'alt' attribte text
 
-test("Verify Alt text locator", async({page})=>{
+test("Verify PW locator", async({page})=>{
     // launch the url in browser
     await page.goto("https://demo.nopcommerce.com/");
 
@@ -24,6 +24,16 @@ test("Verify Alt text locator", async({page})=>{
 
     //await expect(page.getByText("Welcome to")).toBeVisible();   // provided substring/partial text
     await expect(page.getByText(/Welcome\s+To\s+Our\s+Store/i)).toBeVisible();   //regular expression
+
+    // 3. page.getByRole() - Locating by Role   ( role is not an attribute)
+  /* Role locators include buttons, checkboxes, headings, links, lists, tables, 
+     and many more and follow W3C specifications for ARIA role.
+     Prefer for interactive elements like buttons, checkboxes, links, lists, headings, tables, etc.
+*/
+    await page.getByRole("link",{name:'Register'}).click();
+    // so it open register page, and we see Regiter text in h1, but register text is matching in 3 locations, so we cant use getByText().
+   await expect(page.getByRole('heading',{name:"Register"})).toHaveText("Register");
+    
 
 });
 
